@@ -9,7 +9,7 @@
 import UIKit
 
 final class CalculateRouter: RouterInterface {
-    
+
     // VIPER
     weak var presenter: CalculatePresenterRouterInterface!
     weak var navigationController: UINavigationController?

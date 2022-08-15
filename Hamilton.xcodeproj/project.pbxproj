@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 55;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -33,6 +33,10 @@
 		603065EC28AAB2E80020DB3F /* UINavigationController+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 603065EB28AAB2E80020DB3F /* UINavigationController+Utils.swift */; };
 		603065EF28AAC0660020DB3F /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 603065EE28AAC0660020DB3F /* Service.swift */; };
 		603065F128AAC07A0020DB3F /* URLSession+Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 603065F028AAC07A0020DB3F /* URLSession+Cache.swift */; };
+		603065F328AAC4660020DB3F /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 603065F228AAC4660020DB3F /* Repository.swift */; };
+		603065F828AAC49C0020DB3F /* Pair.swift in Sources */ = {isa = PBXBuildFile; fileRef = 603065F528AAC49C0020DB3F /* Pair.swift */; };
+		603065F928AAC49C0020DB3F /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 603065F628AAC49C0020DB3F /* Currency.swift */; };
+		603065FA28AAC49C0020DB3F /* CodeResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 603065F728AAC49C0020DB3F /* CodeResponse.swift */; };
 		605A0EDF28AA8C5000FFE994 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 605A0EDE28AA8C5000FFE994 /* AppDelegate.swift */; };
 		605A0EE628AA8C5000FFE994 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 605A0EE428AA8C5000FFE994 /* Main.storyboard */; };
 		605A0EE828AA8C5300FFE994 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 605A0EE728AA8C5300FFE994 /* Assets.xcassets */; };
@@ -68,6 +72,10 @@
 		603065EB28AAB2E80020DB3F /* UINavigationController+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+Utils.swift"; sourceTree = "<group>"; };
 		603065EE28AAC0660020DB3F /* Service.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		603065F028AAC07A0020DB3F /* URLSession+Cache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "URLSession+Cache.swift"; sourceTree = "<group>"; };
+		603065F228AAC4660020DB3F /* Repository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
+		603065F528AAC49C0020DB3F /* Pair.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pair.swift; sourceTree = "<group>"; };
+		603065F628AAC49C0020DB3F /* Currency.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
+		603065F728AAC49C0020DB3F /* CodeResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CodeResponse.swift; sourceTree = "<group>"; };
 		605A0EDB28AA8C5000FFE994 /* Hamilton.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hamilton.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		605A0EDE28AA8C5000FFE994 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		605A0EE528AA8C5000FFE994 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -111,6 +119,7 @@
 			children = (
 				6030659428AAA7F30020DB3F /* Modules */,
 				603065ED28AAC0440020DB3F /* Domain */,
+				603065F428AAC49C0020DB3F /* Data */,
 				6030658128AA98070020DB3F /* Util */,
 			);
 			path = Sources;
@@ -205,9 +214,20 @@
 		603065ED28AAC0440020DB3F /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				603065F228AAC4660020DB3F /* Repository.swift */,
 				603065EE28AAC0660020DB3F /* Service.swift */,
 			);
 			path = Domain;
+			sourceTree = "<group>";
+		};
+		603065F428AAC49C0020DB3F /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				603065F528AAC49C0020DB3F /* Pair.swift */,
+				603065F628AAC49C0020DB3F /* Currency.swift */,
+				603065F728AAC49C0020DB3F /* CodeResponse.swift */,
+			);
+			path = Data;
 			sourceTree = "<group>";
 		};
 		605A0ED228AA8C5000FFE994 = {
@@ -274,7 +294,7 @@
 				};
 			};
 			buildConfigurationList = 605A0ED628AA8C5000FFE994 /* Build configuration list for PBXProject "Hamilton" */;
-			compatibilityVersion = "Xcode 14.0";
+			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -337,6 +357,8 @@
 				603065EF28AAC0660020DB3F /* Service.swift in Sources */,
 				603065F128AAC07A0020DB3F /* URLSession+Cache.swift in Sources */,
 				603065EA28AAB1A40020DB3F /* SummaryPresenter.swift in Sources */,
+				603065F928AAC49C0020DB3F /* Currency.swift in Sources */,
+				603065F828AAC49C0020DB3F /* Pair.swift in Sources */,
 				6030659028AAA4170020DB3F /* Injection.swift in Sources */,
 				6030658728AAA0880020DB3F /* Bundle+Wrapper.swift in Sources */,
 				603065C728AAADAC0020DB3F /* CalculateRouter.swift in Sources */,
@@ -349,6 +371,7 @@
 				603065E828AAB1A40020DB3F /* SummaryController.swift in Sources */,
 				605A0EDF28AA8C5000FFE994 /* AppDelegate.swift in Sources */,
 				603065DE28AAAFDA0020DB3F /* ConvertController.swift in Sources */,
+				603065FA28AAC49C0020DB3F /* CodeResponse.swift in Sources */,
 				603065E928AAB1A40020DB3F /* SummaryInteractor.swift in Sources */,
 				603065DC28AAAFDA0020DB3F /* ConvertInteractor.swift in Sources */,
 				6030659228AAA4CB0020DB3F /* UIStoryboard+Utils.swift in Sources */,
@@ -358,6 +381,7 @@
 				603065E628AAB1A40020DB3F /* SummaryRouter.swift in Sources */,
 				603065C628AAADAC0020DB3F /* CalculateInteractor.swift in Sources */,
 				603065EC28AAB2E80020DB3F /* UINavigationController+Utils.swift in Sources */,
+				603065F328AAC4660020DB3F /* Repository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
