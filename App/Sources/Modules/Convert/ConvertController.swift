@@ -16,7 +16,13 @@ final class ConvertController: UIViewController, ViewInterface {
     var pair: Pair?
     var amount: Double?
 
+    private var cancelBag = CancelBag()
+
     // UI
+    @IBOutlet weak var baseLabel: UILabel!
+    @IBOutlet weak var percedesLabel: UILabel!
+    @IBOutlet weak var targetLabel: UILabel!
+    @IBOutlet weak var timerLabel: UILabel!
     @IBOutlet weak var buttonNext: UIButton!
 
     override func viewDidLoad() {
@@ -39,9 +45,22 @@ final class ConvertController: UIViewController, ViewInterface {
 private extension ConvertController {
     func wireView() {
 
-        guard let pair = pair else {
+        guard let pair = pair, let amount = amount else {
             return
         }
+
+        // Labels
+        baseLabel.text = "\(amount) \(pair.base)"
+        percedesLabel.text = ~"PRECEDES"
+        targetLabel.text = "\(pair.resultString) \(pair.target)"
+
+        presenter.runCountPublisher
+            .receive(on: DispatchQueue.main)
+            .sink { runCount in
+                let text = ~"SEC_LEFT"
+                self.timerLabel.text = text.replacingOccurrences(of: "SEC", with: "\(runCount)")
+            }
+            .store(in: cancelBag)
 
         buttonNext.setTitle(~"CONVERT", for: .normal)
         buttonNext.addAction(UIAction(handler: { [weak self] _ in

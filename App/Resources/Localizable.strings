@@ -11,5 +11,9 @@
 "CONVERT" = "Convert";
 "DONE" = "Done";
 
+// Convert
+"PRECEDES" = "precedes";
+"SEC_LEFT" = "SEC sec left";
+
 // Success
 "SUCCESS_MESSAGE" = "Great now you have AMOUNT CODE in your account.\n\n Your conversionrate was 1/RATE.";
