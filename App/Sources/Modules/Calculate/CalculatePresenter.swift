@@ -40,6 +40,13 @@ extension CalculatePresenter: CalculatePresenterViewInterface {
     }
 
     func next() {
-        router.next()
+        interactor.getPair(base: "USD", target: "AED", amount: 1)
+            .receive(on: DispatchQueue.main)
+            .sink { error in
+                print(error)
+            } receiveValue: { [weak self] pair in
+                self?.router.next(pair: pair, amount: 1)
+            }
+            .store(in: cancelBag)
     }
 }

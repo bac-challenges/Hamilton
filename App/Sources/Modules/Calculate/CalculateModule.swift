@@ -11,7 +11,7 @@ import Combine
 
 // MARK: - Router
 protocol CalculateRouterPresenterInterface: RouterPresenterInterface {
-    func next()
+    func next(pair: Pair, amount: Double)
 }
 
 // MARK: - Presenter
@@ -27,6 +27,7 @@ protocol CalculatePresenterViewInterface: PresenterViewInterface {
 // MARK: - Interactor
 protocol CalculateInteractorPresenterInterface: InteractorPresenterInterface {
     func getCurrencyList() -> AnyPublisher<[Currency], Error>
+    func getPair(base: String, target: String, amount: Double) -> AnyPublisher<Pair, Error>
 }
 
 final class CalculateModule: ModuleInterface {
