@@ -11,6 +11,12 @@
 "CONVERT" = "Convert";
 "DONE" = "Done";
 
+// Calculate
+"AMOUNT" = "Amount";
+"SELECT_CURRENCY" = "Please Select Currency";
+"NOT_SELECTED" = "---";
+"NO_SELECTION" = "No Selection";
+
 // Convert
 "PRECEDES" = "precedes";
 "SEC_LEFT" = "SEC sec left";

@@ -11,12 +11,21 @@ import Combine
 
 final class CalculatePresenter: ObservableObject, PresenterInterface {
 
+    enum CurrencyTarget {
+        case base, target
+    }
+
     // VIPER
     var router: CalculateRouterPresenterInterface!
     var interactor: CalculateInteractorPresenterInterface!
 
     //
     @Published var items = [Currency]()
+    @Published var baseCurrencyCode = ~"NOT_SELECTED"
+    @Published var targetCurrencyCode = ~"NOT_SELECTED"
+
+    var amount = 0.0
+    var target: CurrencyTarget = .base
 
     //
     private var cancelBag = CancelBag()
@@ -27,6 +36,12 @@ extension CalculatePresenter: CalculatePresenterInteractorInterface {}
 extension CalculatePresenter: CalculatePresenterViewInterface {
 
     var itemsPublisher: Published<[Currency]>.Publisher { $items }
+    var baseCurrencyCodePublisher: Published<String>.Publisher { $baseCurrencyCode }
+    var targetCurrencyCodePublisher: Published<String>.Publisher { $targetCurrencyCode }
+
+    var isTextFieldAvaliable: Bool {
+        baseCurrencyCode != ~"NOT_SELECTED" && targetCurrencyCode != ~"NOT_SELECTED"
+    }
 
     func getCurrencyList() {
         interactor.getCurrencyList()
@@ -39,8 +54,15 @@ extension CalculatePresenter: CalculatePresenterViewInterface {
             .store(in: cancelBag)
     }
 
+    func setCurrency(_ code: String) {
+        switch target {
+        case .base: baseCurrencyCode = code
+        case .target: targetCurrencyCode = code
+        }
+    }
+
     func next() {
-        interactor.getPair(base: "USD", target: "AED", amount: 1)
+        interactor.getPair(base: baseCurrencyCode, target: targetCurrencyCode, amount: amount)
             .receive(on: DispatchQueue.main)
             .sink { error in
                 print(error)

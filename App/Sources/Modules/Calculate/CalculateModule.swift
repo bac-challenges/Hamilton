@@ -19,8 +19,15 @@ protocol CalculatePresenterRouterInterface: PresenterRouterInterface {}
 protocol CalculatePresenterInteractorInterface: PresenterInteractorInterface {}
 protocol CalculatePresenterViewInterface: PresenterViewInterface {
     var itemsPublisher: Published<[Currency]>.Publisher { get }
+    var baseCurrencyCodePublisher: Published<String>.Publisher { get }
+    var targetCurrencyCodePublisher: Published<String>.Publisher { get }
+
+    var amount: Double { get set }
+    var target: CalculatePresenter.CurrencyTarget { get set }
+    var isTextFieldAvaliable: Bool { get }
 
     func getCurrencyList()
+    func setCurrency(_ code: String)
     func next()
 }
 
