@@ -29,11 +29,13 @@ final class ConvertModule: ModuleInterface {
     static func build() -> View {
 
         @Injected(\.storyboard) var storyboard
+        @Injected(\.navigation) var navigation
 
         let interactor = Interactor()
         let presenter = Presenter()
         let view = storyboard.instantiateViewController(ofType: View.self)
         let router = Router()
+        router.navigationController = navigation
 
         Self.assemble(view: view, presenter: presenter, router: router, interactor: interactor)
 
