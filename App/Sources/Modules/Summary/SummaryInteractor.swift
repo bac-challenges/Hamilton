@@ -9,6 +9,8 @@
 import Combine
 
 final class SummaryInteractor: InteractorInterface {
+    
+    // VIPER
     weak var presenter: SummaryPresenterInteractorInterface!
 }
 

@@ -9,6 +9,8 @@
 import UIKit
 
 final class SummaryRouter: RouterInterface {
+    
+    // VIPER
     weak var presenter: SummaryPresenterRouterInterface!
     weak var navigationController: UINavigationController?
 }

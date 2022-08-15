@@ -9,6 +9,8 @@
 import Combine
 
 final class ConvertInteractor: InteractorInterface {
+    
+    // VIPER
     weak var presenter: ConvertPresenterInteractorInterface!
 }
 

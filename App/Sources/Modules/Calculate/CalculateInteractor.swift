@@ -9,6 +9,8 @@
 import Combine
 
 final class CalculateInteractor: InteractorInterface {
+    
+    // VIPER
     weak var presenter: CalculatePresenterInteractorInterface!
 }
 
