@@ -3,7 +3,6 @@
 //  ayoba-ios
 //
 //  Created by emile on 25/06/2020.
-//  Copyright © 2020 xpertai. All rights reserved.
 //
 
 import UIKit

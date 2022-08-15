@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Combine
 
 // MARK: - Router
 protocol CalculateRouterPresenterInterface: RouterPresenterInterface {
@@ -17,11 +18,16 @@ protocol CalculateRouterPresenterInterface: RouterPresenterInterface {
 protocol CalculatePresenterRouterInterface: PresenterRouterInterface {}
 protocol CalculatePresenterInteractorInterface: PresenterInteractorInterface {}
 protocol CalculatePresenterViewInterface: PresenterViewInterface {
+    var itemsPublisher: Published<[Currency]>.Publisher { get }
+
+    func getCurrencyList()
     func next()
 }
 
 // MARK: - Interactor
-protocol CalculateInteractorPresenterInterface: InteractorPresenterInterface {}
+protocol CalculateInteractorPresenterInterface: InteractorPresenterInterface {
+    func getCurrencyList() -> AnyPublisher<[Currency], Error>
+}
 
 final class CalculateModule: ModuleInterface {
 

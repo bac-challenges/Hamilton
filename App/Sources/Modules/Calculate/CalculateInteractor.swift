@@ -12,6 +12,13 @@ final class CalculateInteractor: InteractorInterface {
 
     // VIPER
     weak var presenter: CalculatePresenterInteractorInterface!
+
+    //
+    @Injected(\.repository) var repository
 }
 
-extension CalculateInteractor: CalculateInteractorPresenterInterface {}
+extension CalculateInteractor: CalculateInteractorPresenterInterface {
+    func getCurrencyList() -> AnyPublisher<[Currency], Error> {
+        repository.getCurrencyList().eraseToAnyPublisher()
+    }
+}

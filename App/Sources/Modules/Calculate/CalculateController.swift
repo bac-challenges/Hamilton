@@ -23,6 +23,7 @@ final class CalculateController: UIViewController, ViewInterface {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        presenter.getCurrencyList()
     }
 }
 

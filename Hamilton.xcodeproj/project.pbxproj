@@ -37,6 +37,7 @@
 		603065F828AAC49C0020DB3F /* Pair.swift in Sources */ = {isa = PBXBuildFile; fileRef = 603065F528AAC49C0020DB3F /* Pair.swift */; };
 		603065F928AAC49C0020DB3F /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 603065F628AAC49C0020DB3F /* Currency.swift */; };
 		603065FA28AAC49C0020DB3F /* CodeResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 603065F728AAC49C0020DB3F /* CodeResponse.swift */; };
+		603065FC28AAC9E30020DB3F /* CancelBag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 603065FB28AAC9E30020DB3F /* CancelBag.swift */; };
 		605A0EDF28AA8C5000FFE994 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 605A0EDE28AA8C5000FFE994 /* AppDelegate.swift */; };
 		605A0EE628AA8C5000FFE994 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 605A0EE428AA8C5000FFE994 /* Main.storyboard */; };
 		605A0EE828AA8C5300FFE994 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 605A0EE728AA8C5300FFE994 /* Assets.xcassets */; };
@@ -76,11 +77,12 @@
 		603065F528AAC49C0020DB3F /* Pair.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pair.swift; sourceTree = "<group>"; };
 		603065F628AAC49C0020DB3F /* Currency.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
 		603065F728AAC49C0020DB3F /* CodeResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CodeResponse.swift; sourceTree = "<group>"; };
+		603065FB28AAC9E30020DB3F /* CancelBag.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CancelBag.swift; sourceTree = "<group>"; };
+		603065FD28AACC000020DB3F /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/Main.storyboard; sourceTree = "<group>"; };
+		603065FE28AACC000020DB3F /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		605A0EDB28AA8C5000FFE994 /* Hamilton.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hamilton.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		605A0EDE28AA8C5000FFE994 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		605A0EE528AA8C5000FFE994 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		605A0EE728AA8C5300FFE994 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		605A0EEA28AA8C5300FFE994 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,6 +143,7 @@
 				6030659328AAA4D30020DB3F /* Extensions */,
 				6030659C28AAA9190020DB3F /* VIPER.swift */,
 				6030658F28AAA4170020DB3F /* Injection.swift */,
+				603065FB28AAC9E30020DB3F /* CancelBag.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -299,7 +302,6 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
-				Base,
 			);
 			mainGroup = 605A0ED228AA8C5000FFE994;
 			productRefGroup = 605A0EDC28AA8C5000FFE994 /* Products */;
@@ -353,6 +355,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				603065C928AAADAC0020DB3F /* CalculateController.swift in Sources */,
+				603065FC28AAC9E30020DB3F /* CancelBag.swift in Sources */,
 				603065E728AAB1A40020DB3F /* SummaryModule.swift in Sources */,
 				603065EF28AAC0660020DB3F /* Service.swift in Sources */,
 				603065F128AAC07A0020DB3F /* URLSession+Cache.swift in Sources */,
@@ -391,7 +394,7 @@
 		605A0EE428AA8C5000FFE994 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				605A0EE528AA8C5000FFE994 /* Base */,
+				603065FD28AACC000020DB3F /* en */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -399,7 +402,7 @@
 		605A0EE928AA8C5300FFE994 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				605A0EEA28AA8C5300FFE994 /* Base */,
+				603065FE28AACC000020DB3F /* en */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -409,6 +412,7 @@
 /* Begin XCBuildConfiguration section */
 		605A0EED28AA8C5300FFE994 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6030658428AA99BF0020DB3F /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -469,6 +473,7 @@
 		};
 		605A0EEE28AA8C5300FFE994 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6030658428AA99BF0020DB3F /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
