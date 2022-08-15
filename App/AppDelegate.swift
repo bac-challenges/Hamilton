@@ -17,7 +17,7 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
     // swiftlint:disable all
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         window = UIWindow(frame: UIScreen.main.bounds)
-        window?.rootViewController = storyboard.instantiateViewController(ofType: ViewController.self)
+        window?.rootViewController = CalculateModule.build()
         window?.makeKeyAndVisible()
 
         return true
