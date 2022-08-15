@@ -1,0 +1,12 @@
+/* 
+  Localizable.strings
+  Hamilton
+
+  Created by emile on 15/08/2022.
+  
+*/
+
+// Buttons
+"CALCULATE" = "Calculate";
+"CONVERT" = "Convert";
+"DONE" = "Done";
