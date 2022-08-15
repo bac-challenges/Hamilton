@@ -13,6 +13,12 @@ final class SummaryController: UIViewController, ViewInterface {
     // VIPER
     var presenter: SummaryPresenterViewInterface!
 
+    @IBOutlet weak var label: UILabel!
+
+    var amount: String = ""
+    var code: String = ""
+    var rate: String = ""
+
     override func viewDidLoad() {
         super.viewDidLoad()
         wireView()
@@ -38,5 +44,12 @@ extension SummaryController {
         let done = UIBarButtonItem(title: ~"DONE", style: .plain, target: self, action: #selector(done))
         navigationItem.rightBarButtonItems = [done]
         navigationItem.setHidesBackButton(true, animated: true)
+
+        // Label
+        let successMessage = ~"SUCCESS_MESSAGE"
+        label.text = successMessage
+            .replacingOccurrences(of: "AMOUNT", with: amount)
+            .replacingOccurrences(of: "CODE", with: code)
+            .replacingOccurrences(of: "RATE", with: rate)
     }
 }

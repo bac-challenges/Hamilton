@@ -13,6 +13,9 @@ final class ConvertController: UIViewController, ViewInterface {
     // VIPER
     var presenter: ConvertPresenterViewInterface!
 
+    var pair: Pair?
+    var amount: Double?
+
     // UI
     @IBOutlet weak var buttonNext: UIButton!
 
@@ -35,9 +38,14 @@ final class ConvertController: UIViewController, ViewInterface {
 // MARK: - UI
 private extension ConvertController {
     func wireView() {
+
+        guard let pair = pair else {
+            return
+        }
+
         buttonNext.setTitle(~"CONVERT", for: .normal)
         buttonNext.addAction(UIAction(handler: { [weak self] _ in
-            self?.presenter.next()
+            self?.presenter.next(pair: pair)
         }), for: .touchUpInside)
     }
 }

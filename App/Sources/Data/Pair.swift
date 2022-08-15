@@ -20,4 +20,12 @@ struct Pair: Codable {
     let target: String
     let rate: Double
     let result: Double
+
+    var rateString: String {
+        String(format: "%.2f", rate)
+    }
+
+    var resultString: String {
+        String(format: "%.2f", result)
+    }
 }

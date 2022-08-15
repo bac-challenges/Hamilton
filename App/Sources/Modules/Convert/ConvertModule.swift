@@ -10,7 +10,7 @@ import UIKit
 
 // MARK: - Router
 protocol ConvertRouterPresenterInterface: RouterPresenterInterface {
-    func next()
+    func next(amount: String, code: String, rate: String)
     func back()
 }
 
@@ -22,7 +22,7 @@ protocol ConvertPresenterViewInterface: PresenterViewInterface {
 
     func startTimer()
     func stopTimer()
-    func next()
+    func next(pair: Pair)
 }
 
 // MARK: - Interactor

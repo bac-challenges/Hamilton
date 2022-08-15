@@ -10,3 +10,6 @@
 "CALCULATE" = "Calculate";
 "CONVERT" = "Convert";
 "DONE" = "Done";
+
+// Success
+"SUCCESS_MESSAGE" = "Great now you have AMOUNT CODE in your account.\n\n Your conversionrate was 1/RATE.";

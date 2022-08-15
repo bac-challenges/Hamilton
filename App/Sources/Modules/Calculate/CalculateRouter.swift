@@ -17,6 +17,10 @@ final class CalculateRouter: RouterInterface {
 
 extension CalculateRouter: CalculateRouterPresenterInterface {
     func next(pair: Pair, amount: Double) {
-        navigationController?.pushViewController(ConvertModule.build(), animated: true)
+        let view = ConvertModule.build()
+        view.pair = pair
+        view.amount = amount
+
+        navigationController?.pushViewController(view, animated: true)
     }
 }

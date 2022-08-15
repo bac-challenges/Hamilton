@@ -91,20 +91,37 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SummaryController" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gLu-PS-ocr">
-                                <rect key="frame" x="121" y="411.66666666666669" width="148" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="W1e-xs-MQQ">
+                                <rect key="frame" x="20" y="350" width="350" height="144"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="checkmark.circle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="UJz-s8-WUR">
+                                        <rect key="frame" x="151" y="1" width="48" height="46.666666666666671"/>
+                                        <color key="tintColor" systemColor="systemGreenColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="48" id="5B0-s7-jmV"/>
+                                            <constraint firstAttribute="height" constant="48" id="urS-Qp-kxl"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Great now you have AMOUNT CODE in your account.\n Your conversionrate was 1/RATE" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3iB-RJ-iFz">
+                                        <rect key="frame" x="6.3333333333333428" y="48" width="337.66666666666663" height="96"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="dX3-66-QV5"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="gLu-PS-ocr" firstAttribute="centerX" secondItem="CXa-8O-2Rm" secondAttribute="centerX" id="ayC-Z6-IZS"/>
-                            <constraint firstItem="gLu-PS-ocr" firstAttribute="centerY" secondItem="CXa-8O-2Rm" secondAttribute="centerY" id="i02-Yc-XgE"/>
+                            <constraint firstItem="W1e-xs-MQQ" firstAttribute="leading" secondItem="dX3-66-QV5" secondAttribute="leading" constant="20" id="PeV-NX-d1E"/>
+                            <constraint firstItem="W1e-xs-MQQ" firstAttribute="centerY" secondItem="CXa-8O-2Rm" secondAttribute="centerY" id="XBa-pw-L3W"/>
+                            <constraint firstAttribute="trailing" secondItem="W1e-xs-MQQ" secondAttribute="trailing" constant="20" id="YzI-c5-ugp"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="label" destination="3iB-RJ-iFz" id="dYm-lN-37C"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AOS-V5-clK" sceneMemberID="firstResponder"/>
             </objects>
@@ -113,8 +130,12 @@
     </scenes>
     <color key="tintColor" systemColor="systemRedColor"/>
     <resources>
+        <image name="checkmark.circle" catalog="system" width="128" height="123"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemRedColor">
             <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
