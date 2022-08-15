@@ -1,0 +1,13 @@
+//
+//  Config.xcconfig
+//  Hamilton
+//
+//  Created by emile on 15/08/2022.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+
+HAMILTON_API_URL = v6.exchangerate-api.com/v6/
+HAMILTON_API_KEY = 0f65e22c3707b6e40246b65a
+HAMILTON_REFRESH_INTERVAL = 5
