@@ -11,12 +11,17 @@ import UIKit
 // MARK: - Router
 protocol ConvertRouterPresenterInterface: RouterPresenterInterface {
     func next()
+    func back()
 }
 
 // MARK: - Presenter
 protocol ConvertPresenterRouterInterface: PresenterRouterInterface {}
 protocol ConvertPresenterInteractorInterface: PresenterInteractorInterface {}
 protocol ConvertPresenterViewInterface: PresenterViewInterface {
+    var runCountPublisher: Published<Int>.Publisher { get }
+
+    func startTimer()
+    func stopTimer()
     func next()
 }
 
