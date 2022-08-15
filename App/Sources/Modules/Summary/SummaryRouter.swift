@@ -13,4 +13,8 @@ final class SummaryRouter: RouterInterface {
     weak var navigationController: UINavigationController?
 }
 
-extension SummaryRouter: SummaryRouterPresenterInterface {}
+extension SummaryRouter: SummaryRouterPresenterInterface {
+    func done() {
+        
+    }
+}

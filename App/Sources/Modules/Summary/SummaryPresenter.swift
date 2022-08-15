@@ -17,4 +17,8 @@ final class SummaryPresenter: ObservableObject, PresenterInterface {
 
 extension SummaryPresenter: SummaryPresenterRouterInterface {}
 extension SummaryPresenter: SummaryPresenterInteractorInterface {}
-extension SummaryPresenter: SummaryPresenterViewInterface {}
+extension SummaryPresenter: SummaryPresenterViewInterface {
+    func done() {
+        router.done()
+    }
+}

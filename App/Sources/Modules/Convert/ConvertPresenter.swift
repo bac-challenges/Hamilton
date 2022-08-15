@@ -17,4 +17,8 @@ final class ConvertPresenter: ObservableObject, PresenterInterface {
 
 extension ConvertPresenter: ConvertPresenterRouterInterface {}
 extension ConvertPresenter: ConvertPresenterInteractorInterface {}
-extension ConvertPresenter: ConvertPresenterViewInterface {}
+extension ConvertPresenter: ConvertPresenterViewInterface {
+    func next() {
+        router.next()
+    }
+}

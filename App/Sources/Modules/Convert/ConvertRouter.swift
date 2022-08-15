@@ -13,4 +13,8 @@ final class ConvertRouter: RouterInterface {
     weak var navigationController: UINavigationController?
 }
 
-extension ConvertRouter: ConvertRouterPresenterInterface {}
+extension ConvertRouter: ConvertRouterPresenterInterface {
+    func next() {
+        
+    }
+}

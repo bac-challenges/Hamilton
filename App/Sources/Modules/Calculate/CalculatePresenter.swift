@@ -17,4 +17,8 @@ final class CalculatePresenter: ObservableObject, PresenterInterface {
 
 extension CalculatePresenter: CalculatePresenterRouterInterface {}
 extension CalculatePresenter: CalculatePresenterInteractorInterface {}
-extension CalculatePresenter: CalculatePresenterViewInterface {}
+extension CalculatePresenter: CalculatePresenterViewInterface {
+    func next() {
+        router.next()
+    }
+}

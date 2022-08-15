@@ -13,4 +13,8 @@ final class CalculateRouter: RouterInterface {
     weak var navigationController: UINavigationController?
 }
 
-extension CalculateRouter: CalculateRouterPresenterInterface {}
+extension CalculateRouter: CalculateRouterPresenterInterface {
+    func next() {
+        
+    }
+}

@@ -9,12 +9,16 @@
 import UIKit
 
 // MARK: - Router
-protocol SummaryRouterPresenterInterface: RouterPresenterInterface {}
+protocol SummaryRouterPresenterInterface: RouterPresenterInterface {
+    func done()
+}
 
 // MARK: - Presenter
 protocol SummaryPresenterRouterInterface: PresenterRouterInterface {}
 protocol SummaryPresenterInteractorInterface: PresenterInteractorInterface {}
-protocol SummaryPresenterViewInterface: PresenterViewInterface {}
+protocol SummaryPresenterViewInterface: PresenterViewInterface {
+    func done()
+}
 
 // MARK: - Interactor
 protocol SummaryInteractorPresenterInterface: InteractorPresenterInterface {}
