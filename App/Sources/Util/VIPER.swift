@@ -10,69 +10,57 @@ import UIKit
 
 // MARK: - VIPER
 public protocol RouterInterface: RouterPresenterInterface {
-	associatedtype PresenterRouter
+    associatedtype PresenterRouter
 
-	var presenter: PresenterRouter! { get set }
+    var presenter: PresenterRouter! { get set }
 }
 
 public protocol InteractorInterface: InteractorPresenterInterface {
-	associatedtype PresenterInteractor
+    associatedtype PresenterInteractor
 
-	var presenter: PresenterInteractor! { get set }
+    var presenter: PresenterInteractor! { get set }
 }
 
-public protocol PresenterInterface: PresenterRouterInterface & PresenterInteractorInterface & PresenterViewInterface {
-	associatedtype RouterPresenter
-	associatedtype InteractorPresenter
-	/*associatedtype ViewPresenter*/
+public protocol PresenterInterface: PresenterRouterInterface, PresenterInteractorInterface, PresenterViewInterface {
+    associatedtype RouterPresenter
+    associatedtype InteractorPresenter
 
-	var router: RouterPresenter! { get set }
-	var interactor: InteractorPresenter! { get set }
-	/*var view: ViewPresenter! { get set }*/
+    var router: RouterPresenter! { get set }
+    var interactor: InteractorPresenter! { get set }
 }
 
-public protocol ViewInterface/*: ViewPresenterInterface*/ {
-	associatedtype PresenterView
+public protocol ViewInterface: ViewPresenterInterface {
+    associatedtype PresenterView
 
-	var presenter: PresenterView! { get set }
+    var presenter: PresenterView! { get set }
 }
 
 // MARK: - "i/o" transitions
-public protocol RouterPresenterInterface: class {}
-public protocol InteractorPresenterInterface: class {}
-public protocol PresenterRouterInterface: class {}
-public protocol PresenterInteractorInterface: class {}
-public protocol PresenterViewInterface: class {}
-/*
-public protocol ViewPresenterInterface: class {
-
-}
-*/
+public protocol RouterPresenterInterface: AnyObject {}
+public protocol InteractorPresenterInterface: AnyObject {}
+public protocol PresenterRouterInterface: AnyObject {}
+public protocol PresenterInteractorInterface: AnyObject {}
+public protocol PresenterViewInterface: AnyObject {}
+public protocol ViewPresenterInterface: AnyObject {}
 
 // MARK: - Module
 public protocol ModuleInterface {
 
-	associatedtype View where View: ViewInterface
-	associatedtype Presenter where Presenter: PresenterInterface
-	associatedtype Router where Router: RouterInterface
-	associatedtype Interactor where Interactor: InteractorInterface
+    associatedtype View where View: ViewInterface
+    associatedtype Presenter where Presenter: PresenterInterface
+    associatedtype Router where Router: RouterInterface
+    associatedtype Interactor where Interactor: InteractorInterface
 
-	static func assemble(/*view: View, */presenter: Presenter, router: Router, interactor: Interactor)
+    static func assemble(view: View, presenter: Presenter, router: Router, interactor: Interactor)
 }
 
+// swiftlint:disable all
 public extension ModuleInterface {
-
-	static func assemble(/*view: View, */presenter: Presenter, router: Router, interactor: Interactor) {
-		/*
-		view.presenter = (presenter as! Self.View.PresenterView)
-		
-		presenter.view = (view as! Self.Presenter.ViewPresenter)
-		*/
-		presenter.interactor = (interactor as! Self.Presenter.InteractorPresenter)
+    static func assemble(view: View, presenter: Presenter, router: Router, interactor: Interactor) {
+        interactor.presenter = (presenter as! Self.Interactor.PresenterInteractor)
+        presenter.interactor = (interactor as! Self.Presenter.InteractorPresenter)
         presenter.router = (router as! Self.Presenter.RouterPresenter)
-
-		interactor.presenter = (presenter as! Self.Interactor.PresenterInteractor)
-
-		router.presenter = (presenter as! Self.Router.PresenterRouter)
-	}
+        router.presenter = (presenter as! Self.Router.PresenterRouter)
+        view.presenter = (presenter as! Self.View.PresenterView)
+    }
 }

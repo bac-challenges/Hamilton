@@ -14,15 +14,13 @@
 		6030658D28AAA2400020DB3F /* UserDefaults+Wrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6030658C28AAA2400020DB3F /* UserDefaults+Wrapper.swift */; };
 		6030659028AAA4170020DB3F /* Injection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6030658F28AAA4170020DB3F /* Injection.swift */; };
 		6030659228AAA4CB0020DB3F /* UIStoryboard+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6030659128AAA4CB0020DB3F /* UIStoryboard+Utils.swift */; };
-		6030659D28AAA9190020DB3F /* CalculateModuleModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6030659628AAA9190020DB3F /* CalculateModuleModule.swift */; };
-		6030659E28AAA9190020DB3F /* CalculateModulePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6030659728AAA9190020DB3F /* CalculateModulePresenter.swift */; };
-		6030659F28AAA9190020DB3F /* CalculateModuleRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6030659828AAA9190020DB3F /* CalculateModuleRouter.swift */; };
-		603065A028AAA9190020DB3F /* CalculateModuleInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6030659928AAA9190020DB3F /* CalculateModuleInteractor.swift */; };
-		603065A128AAA9190020DB3F /* CalculateModuleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6030659A28AAA9190020DB3F /* CalculateModuleView.swift */; };
-		603065A228AAA9190020DB3F /* CalculateModuleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6030659B28AAA9190020DB3F /* CalculateModuleViewModel.swift */; };
 		603065A328AAA9190020DB3F /* VIPER.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6030659C28AAA9190020DB3F /* VIPER.swift */; };
+		603065C528AAADAC0020DB3F /* CalculateModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 603065C028AAADAC0020DB3F /* CalculateModule.swift */; };
+		603065C628AAADAC0020DB3F /* CalculateInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 603065C128AAADAC0020DB3F /* CalculateInteractor.swift */; };
+		603065C728AAADAC0020DB3F /* CalculateRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 603065C228AAADAC0020DB3F /* CalculateRouter.swift */; };
+		603065C828AAADAC0020DB3F /* CalculatePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 603065C328AAADAC0020DB3F /* CalculatePresenter.swift */; };
+		603065C928AAADAC0020DB3F /* CalculateController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 603065C428AAADAC0020DB3F /* CalculateController.swift */; };
 		605A0EDF28AA8C5000FFE994 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 605A0EDE28AA8C5000FFE994 /* AppDelegate.swift */; };
-		605A0EE328AA8C5000FFE994 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 605A0EE228AA8C5000FFE994 /* ViewController.swift */; };
 		605A0EE628AA8C5000FFE994 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 605A0EE428AA8C5000FFE994 /* Main.storyboard */; };
 		605A0EE828AA8C5300FFE994 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 605A0EE728AA8C5300FFE994 /* Assets.xcassets */; };
 		605A0EEB28AA8C5300FFE994 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 605A0EE928AA8C5300FFE994 /* LaunchScreen.storyboard */; };
@@ -38,16 +36,14 @@
 		6030658C28AAA2400020DB3F /* UserDefaults+Wrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Wrapper.swift"; sourceTree = "<group>"; };
 		6030658F28AAA4170020DB3F /* Injection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Injection.swift; sourceTree = "<group>"; };
 		6030659128AAA4CB0020DB3F /* UIStoryboard+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStoryboard+Utils.swift"; sourceTree = "<group>"; };
-		6030659628AAA9190020DB3F /* CalculateModuleModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculateModuleModule.swift; sourceTree = "<group>"; };
-		6030659728AAA9190020DB3F /* CalculateModulePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculateModulePresenter.swift; sourceTree = "<group>"; };
-		6030659828AAA9190020DB3F /* CalculateModuleRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculateModuleRouter.swift; sourceTree = "<group>"; };
-		6030659928AAA9190020DB3F /* CalculateModuleInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculateModuleInteractor.swift; sourceTree = "<group>"; };
-		6030659A28AAA9190020DB3F /* CalculateModuleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculateModuleView.swift; sourceTree = "<group>"; };
-		6030659B28AAA9190020DB3F /* CalculateModuleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculateModuleViewModel.swift; sourceTree = "<group>"; };
 		6030659C28AAA9190020DB3F /* VIPER.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VIPER.swift; sourceTree = "<group>"; };
+		603065C028AAADAC0020DB3F /* CalculateModule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalculateModule.swift; sourceTree = "<group>"; };
+		603065C128AAADAC0020DB3F /* CalculateInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalculateInteractor.swift; sourceTree = "<group>"; };
+		603065C228AAADAC0020DB3F /* CalculateRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalculateRouter.swift; sourceTree = "<group>"; };
+		603065C328AAADAC0020DB3F /* CalculatePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalculatePresenter.swift; sourceTree = "<group>"; };
+		603065C428AAADAC0020DB3F /* CalculateController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalculateController.swift; sourceTree = "<group>"; };
 		605A0EDB28AA8C5000FFE994 /* Hamilton.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hamilton.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		605A0EDE28AA8C5000FFE994 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		605A0EE228AA8C5000FFE994 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		605A0EE528AA8C5000FFE994 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		605A0EE728AA8C5300FFE994 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		605A0EEA28AA8C5300FFE994 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -87,7 +83,6 @@
 		6030657C28AA957D0020DB3F /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				605A0EE228AA8C5000FFE994 /* ViewController.swift */,
 				6030659428AAA7F30020DB3F /* Modules */,
 				6030658128AA98070020DB3F /* Util */,
 			);
@@ -143,12 +138,11 @@
 		6030659528AAA8130020DB3F /* Calculate */ = {
 			isa = PBXGroup;
 			children = (
-				6030659628AAA9190020DB3F /* CalculateModuleModule.swift */,
-				6030659728AAA9190020DB3F /* CalculateModulePresenter.swift */,
-				6030659828AAA9190020DB3F /* CalculateModuleRouter.swift */,
-				6030659928AAA9190020DB3F /* CalculateModuleInteractor.swift */,
-				6030659A28AAA9190020DB3F /* CalculateModuleView.swift */,
-				6030659B28AAA9190020DB3F /* CalculateModuleViewModel.swift */,
+				603065C028AAADAC0020DB3F /* CalculateModule.swift */,
+				603065C428AAADAC0020DB3F /* CalculateController.swift */,
+				603065C128AAADAC0020DB3F /* CalculateInteractor.swift */,
+				603065C328AAADAC0020DB3F /* CalculatePresenter.swift */,
+				603065C228AAADAC0020DB3F /* CalculateRouter.swift */,
 			);
 			path = Calculate;
 			sourceTree = "<group>";
@@ -275,21 +269,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				603065C928AAADAC0020DB3F /* CalculateController.swift in Sources */,
 				6030659028AAA4170020DB3F /* Injection.swift in Sources */,
-				6030659E28AAA9190020DB3F /* CalculateModulePresenter.swift in Sources */,
-				605A0EE328AA8C5000FFE994 /* ViewController.swift in Sources */,
-				6030659D28AAA9190020DB3F /* CalculateModuleModule.swift in Sources */,
 				6030658728AAA0880020DB3F /* Bundle+Wrapper.swift in Sources */,
+				603065C728AAADAC0020DB3F /* CalculateRouter.swift in Sources */,
 				603065A328AAA9190020DB3F /* VIPER.swift in Sources */,
-				603065A228AAA9190020DB3F /* CalculateModuleViewModel.swift in Sources */,
+				603065C528AAADAC0020DB3F /* CalculateModule.swift in Sources */,
 				6030658D28AAA2400020DB3F /* UserDefaults+Wrapper.swift in Sources */,
 				6030658A28AAA14D0020DB3F /* Config.swift in Sources */,
 				605A0EDF28AA8C5000FFE994 /* AppDelegate.swift in Sources */,
-				6030659F28AAA9190020DB3F /* CalculateModuleRouter.swift in Sources */,
-				603065A028AAA9190020DB3F /* CalculateModuleInteractor.swift in Sources */,
 				6030659228AAA4CB0020DB3F /* UIStoryboard+Utils.swift in Sources */,
+				603065C828AAADAC0020DB3F /* CalculatePresenter.swift in Sources */,
 				6030658328AA983A0020DB3F /* String+Utils.swift in Sources */,
-				603065A128AAA9190020DB3F /* CalculateModuleView.swift in Sources */,
+				603065C628AAADAC0020DB3F /* CalculateInteractor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
