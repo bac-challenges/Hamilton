@@ -30,6 +30,7 @@
 		603065E828AAB1A40020DB3F /* SummaryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 603065E328AAB1A40020DB3F /* SummaryController.swift */; };
 		603065E928AAB1A40020DB3F /* SummaryInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 603065E428AAB1A40020DB3F /* SummaryInteractor.swift */; };
 		603065EA28AAB1A40020DB3F /* SummaryPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 603065E528AAB1A40020DB3F /* SummaryPresenter.swift */; };
+		603065EC28AAB2E80020DB3F /* UINavigationController+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 603065EB28AAB2E80020DB3F /* UINavigationController+Utils.swift */; };
 		605A0EDF28AA8C5000FFE994 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 605A0EDE28AA8C5000FFE994 /* AppDelegate.swift */; };
 		605A0EE628AA8C5000FFE994 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 605A0EE428AA8C5000FFE994 /* Main.storyboard */; };
 		605A0EE828AA8C5300FFE994 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 605A0EE728AA8C5300FFE994 /* Assets.xcassets */; };
@@ -62,6 +63,7 @@
 		603065E328AAB1A40020DB3F /* SummaryController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SummaryController.swift; sourceTree = "<group>"; };
 		603065E428AAB1A40020DB3F /* SummaryInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SummaryInteractor.swift; sourceTree = "<group>"; };
 		603065E528AAB1A40020DB3F /* SummaryPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SummaryPresenter.swift; sourceTree = "<group>"; };
+		603065EB28AAB2E80020DB3F /* UINavigationController+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+Utils.swift"; sourceTree = "<group>"; };
 		605A0EDB28AA8C5000FFE994 /* Hamilton.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hamilton.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		605A0EDE28AA8C5000FFE994 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		605A0EE528AA8C5000FFE994 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -142,6 +144,7 @@
 			isa = PBXGroup;
 			children = (
 				6030659128AAA4CB0020DB3F /* UIStoryboard+Utils.swift */,
+				603065EB28AAB2E80020DB3F /* UINavigationController+Utils.swift */,
 				6030658228AA983A0020DB3F /* String+Utils.swift */,
 			);
 			path = Extensions;
@@ -338,6 +341,7 @@
 				6030658328AA983A0020DB3F /* String+Utils.swift in Sources */,
 				603065E628AAB1A40020DB3F /* SummaryRouter.swift in Sources */,
 				603065C628AAADAC0020DB3F /* CalculateInteractor.swift in Sources */,
+				603065EC28AAB2E80020DB3F /* UINavigationController+Utils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
