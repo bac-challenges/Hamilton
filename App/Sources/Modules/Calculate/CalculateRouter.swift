@@ -15,6 +15,6 @@ final class CalculateRouter: RouterInterface {
 
 extension CalculateRouter: CalculateRouterPresenterInterface {
     func next() {
-        
+        navigationController?.pushViewController(ConvertModule.build(), animated: true)
     }
 }

@@ -15,6 +15,7 @@ final class ConvertRouter: RouterInterface {
 
 extension ConvertRouter: ConvertRouterPresenterInterface {
     func next() {
-        
+        let summary = UINavigationController(rootViewController: SummaryModule.build())
+        navigationController?.present(summary, animated: true)
     }
 }

@@ -23,14 +23,24 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gev-QS-6b4">
+                                <rect key="frame" x="147.66666666666666" y="775" width="95" height="34.333333333333371"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Calculate"/>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="SCK-HL-flv" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="KGV-Cw-0fO"/>
                             <constraint firstItem="SCK-HL-flv" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="m8K-ah-T6f"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Gev-QS-6b4" secondAttribute="bottom" constant="0.66666666666662877" id="pbX-As-Cz5"/>
+                            <constraint firstItem="Gev-QS-6b4" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="xjX-pI-d8z"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="buttonNext" destination="Gev-QS-6b4" id="ypq-tp-bYC"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -50,14 +60,24 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Bj-Cw-Eg8">
+                                <rect key="frame" x="152.66666666666666" y="775" width="85" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Convert"/>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="JpB-Ja-VJk"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="7Bj-Cw-Eg8" firstAttribute="bottom" secondItem="JpB-Ja-VJk" secondAttribute="bottom" id="4Yo-ZU-q2p"/>
                             <constraint firstItem="b5X-ws-SRC" firstAttribute="centerY" secondItem="SoZ-uj-OIQ" secondAttribute="centerY" id="eIz-GL-3IU"/>
                             <constraint firstItem="b5X-ws-SRC" firstAttribute="centerX" secondItem="SoZ-uj-OIQ" secondAttribute="centerX" id="fUv-Ca-qZC"/>
+                            <constraint firstItem="7Bj-Cw-Eg8" firstAttribute="centerX" secondItem="SoZ-uj-OIQ" secondAttribute="centerX" id="u4w-IQ-9W1"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="buttonNext" destination="7Bj-Cw-Eg8" id="O8H-FR-Cn8"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2t7-3G-dTQ" sceneMemberID="firstResponder"/>
             </objects>
@@ -91,9 +111,13 @@
             <point key="canvasLocation" x="1638" y="-2"/>
         </scene>
     </scenes>
+    <color key="tintColor" systemColor="systemRedColor"/>
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

@@ -15,9 +15,28 @@ final class SummaryController: UIViewController, ViewInterface {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        wireView()
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+    }
+}
+
+// MARK: - Actions
+private extension SummaryController {
+    @objc func done() {
+        presenter.done()
+    }
+}
+
+// MARK: - UI
+extension SummaryController {
+    func wireView() {
+
+        // NavBar
+        let done = UIBarButtonItem(title: ~"DONE", style: .plain, target: self, action: #selector(done))
+        navigationItem.rightBarButtonItems = [done]
+        navigationItem.setHidesBackButton(true, animated: true)
     }
 }

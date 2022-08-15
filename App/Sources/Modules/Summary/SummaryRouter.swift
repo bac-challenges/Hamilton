@@ -15,6 +15,7 @@ final class SummaryRouter: RouterInterface {
 
 extension SummaryRouter: SummaryRouterPresenterInterface {
     func done() {
-        
+        navigationController?.popToRootViewController(animated: false)
+        navigationController?.dismiss(animated: true)
     }
 }
