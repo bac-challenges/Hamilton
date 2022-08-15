@@ -10,13 +10,13 @@ import UIKit
 struct Config {
     @BundleBacked<String>(key: "api-url")
     static var url
-    
+
     @BundleBacked<String>(key: "api-key")
     static var key
-    
+
     @BundleBacked<String>(key: "api-refresh-interval")
     static var interval
-    
+
     static var baseUrl: String {
         guard let url = url, let key = key else {
             fatalError()

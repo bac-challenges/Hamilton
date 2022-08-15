@@ -13,6 +13,7 @@
 		6030658A28AAA14D0020DB3F /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6030658928AAA14D0020DB3F /* Config.swift */; };
 		6030658D28AAA2400020DB3F /* UserDefaults+Wrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6030658C28AAA2400020DB3F /* UserDefaults+Wrapper.swift */; };
 		6030659028AAA4170020DB3F /* Injection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6030658F28AAA4170020DB3F /* Injection.swift */; };
+		6030659228AAA4CB0020DB3F /* UIStoryboard+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6030659128AAA4CB0020DB3F /* UIStoryboard+Utils.swift */; };
 		605A0EDF28AA8C5000FFE994 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 605A0EDE28AA8C5000FFE994 /* AppDelegate.swift */; };
 		605A0EE328AA8C5000FFE994 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 605A0EE228AA8C5000FFE994 /* ViewController.swift */; };
 		605A0EE628AA8C5000FFE994 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 605A0EE428AA8C5000FFE994 /* Main.storyboard */; };
@@ -29,6 +30,7 @@
 		6030658928AAA14D0020DB3F /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		6030658C28AAA2400020DB3F /* UserDefaults+Wrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Wrapper.swift"; sourceTree = "<group>"; };
 		6030658F28AAA4170020DB3F /* Injection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Injection.swift; sourceTree = "<group>"; };
+		6030659128AAA4CB0020DB3F /* UIStoryboard+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStoryboard+Utils.swift"; sourceTree = "<group>"; };
 		605A0EDB28AA8C5000FFE994 /* Hamilton.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hamilton.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		605A0EDE28AA8C5000FFE994 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		605A0EE228AA8C5000FFE994 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -90,7 +92,7 @@
 			isa = PBXGroup;
 			children = (
 				6030658B28AAA21F0020DB3F /* Wrappers */,
-				6030658228AA983A0020DB3F /* String+Utils.swift */,
+				6030659328AAA4D30020DB3F /* Extensions */,
 				6030658F28AAA4170020DB3F /* Injection.swift */,
 			);
 			path = Util;
@@ -103,6 +105,15 @@
 				6030658C28AAA2400020DB3F /* UserDefaults+Wrapper.swift */,
 			);
 			path = Wrappers;
+			sourceTree = "<group>";
+		};
+		6030659328AAA4D30020DB3F /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				6030659128AAA4CB0020DB3F /* UIStoryboard+Utils.swift */,
+				6030658228AA983A0020DB3F /* String+Utils.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		605A0ED228AA8C5000FFE994 = {
@@ -233,6 +244,7 @@
 				6030658D28AAA2400020DB3F /* UserDefaults+Wrapper.swift in Sources */,
 				6030658A28AAA14D0020DB3F /* Config.swift in Sources */,
 				605A0EDF28AA8C5000FFE994 /* AppDelegate.swift in Sources */,
+				6030659228AAA4CB0020DB3F /* UIStoryboard+Utils.swift in Sources */,
 				6030658328AA983A0020DB3F /* String+Utils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -12,10 +12,12 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
+    @Injected(\.storyboard) var storyboard
+
     // swiftlint:disable all
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         window = UIWindow(frame: UIScreen.main.bounds)
-        window?.rootViewController = ViewController()
+        window?.rootViewController = storyboard.instantiateViewController(ofType: ViewController.self)
         window?.makeKeyAndVisible()
 
         return true
