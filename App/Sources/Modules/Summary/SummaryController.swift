@@ -15,7 +15,7 @@ final class SummaryController: UIViewController, ViewInterface {
 
     @IBOutlet weak var label: UILabel!
 
-    var amount: String = ""
+    var amount: Double = 0.0
     var code: String = ""
     var rate: String = ""
 
@@ -48,7 +48,7 @@ extension SummaryController {
         // Label
         let successMessage = ~"SUCCESS_MESSAGE"
         label.text = successMessage
-            .replacingOccurrences(of: "AMOUNT", with: amount)
+            .replacingOccurrences(of: "AMOUNT", with: String(amount))
             .replacingOccurrences(of: "CODE", with: code)
             .replacingOccurrences(of: "RATE", with: rate)
     }

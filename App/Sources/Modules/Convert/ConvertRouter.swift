@@ -16,7 +16,7 @@ final class ConvertRouter: RouterInterface {
 }
 
 extension ConvertRouter: ConvertRouterPresenterInterface {
-    func next(amount: String, code: String, rate: String) {
+    func next(amount: Double, code: String, rate: String) {
         let view = SummaryModule.build()
         view.amount = amount
         view.code = code

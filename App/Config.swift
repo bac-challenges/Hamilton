@@ -13,13 +13,13 @@ struct Config {
     enum EndPoint: EndPointProtocol {
 
         case code
-        case pair(base: String, target: String, amount: String)
+        case pair(base: String, target: String)
         case mock
 
         var url: URL? {
             switch self {
             case .code: return URL(string: "\(Config.baseUrl)codes")
-            case .pair(let base, let target, let amount): return URL(string: "\(Config.baseUrl)pair/\(base)/\(target)/\(amount)")
+            case .pair(let base, let target): return URL(string: "\(Config.baseUrl)pair/\(base)/\(target)")
             case .mock: return URL(fileURLWithPath: Bundle.main.path(forResource: "mock", ofType: "json") ?? "")
             }
         }

@@ -14,10 +14,11 @@ protocol Repository {
 }
 
 // MARK: -
-struct RemoteRepository: Repository {
+final class RemoteRepository: Repository {
 
     @Injected(\.service)
     private var service: Service
+    private var cache = [String: CacheItem]()
 
     func getCurrencyList() -> AnyPublisher<[Currency], Error> {
         return service.get(Config.EndPoint.code)
@@ -27,9 +28,20 @@ struct RemoteRepository: Repository {
     }
 
     func getPair(base: String, target: String, amount: String) -> AnyPublisher<Pair, Error> {
-        return service.get(Config.EndPoint.pair(base: base, target: target, amount: amount))
-            .decode(type: Pair.self, decoder: JSONDecoder())
-            .eraseToAnyPublisher()
+
+        guard let cacheItem = cache["\(base)\(target)"], cacheItem.valid else {
+            return service.get(Config.EndPoint.pair(base: base, target: target))
+                .decode(type: Pair.self, decoder: JSONDecoder())
+                .map { item in
+                    self.cache[item.name] = CacheItem(created: Date(), pair: item)
+                    return item
+                }
+                .eraseToAnyPublisher()
+        }
+
+        return Future<Pair, Error> { promise in
+            promise(.success(cacheItem.pair))
+        }.eraseToAnyPublisher()
     }
 }
 
@@ -44,7 +56,7 @@ struct MockRepository: Repository {
         ]
     }
 
-    private var pair = Pair(base: "USD", target: "GBP", rate: 1.2, result: 150)
+    private var pair = Pair(base: "USD", target: "GBP", rate: 1.2)
 
     func getCurrencyList() -> AnyPublisher<[Currency], Error> {
         return Future<[Currency], Error> { promise in
