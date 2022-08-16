@@ -47,6 +47,7 @@
 		609BF98A28AAE6140002C3C6 /* UIView+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 609BF98928AAE6140002C3C6 /* UIView+Utils.swift */; };
 		609BF98C28AB52990002C3C6 /* CacheItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 609BF98B28AB52990002C3C6 /* CacheItem.swift */; };
 		609BF98E28AB803A0002C3C6 /* Date+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 609BF98D28AB803A0002C3C6 /* Date+Utils.swift */; };
+		609BF99028ABA5DD0002C3C6 /* Dictionary+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 609BF98F28ABA5DD0002C3C6 /* Dictionary+Utils.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -93,6 +94,7 @@
 		609BF98928AAE6140002C3C6 /* UIView+Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Utils.swift"; sourceTree = "<group>"; };
 		609BF98B28AB52990002C3C6 /* CacheItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheItem.swift; sourceTree = "<group>"; };
 		609BF98D28AB803A0002C3C6 /* Date+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Utils.swift"; sourceTree = "<group>"; };
+		609BF98F28ABA5DD0002C3C6 /* Dictionary+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dictionary+Utils.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -178,6 +180,7 @@
 				603065F028AAC07A0020DB3F /* URLSession+Cache.swift */,
 				6030658228AA983A0020DB3F /* String+Utils.swift */,
 				609BF98D28AB803A0002C3C6 /* Date+Utils.swift */,
+				609BF98F28ABA5DD0002C3C6 /* Dictionary+Utils.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -391,6 +394,7 @@
 				605A0EDF28AA8C5000FFE994 /* AppDelegate.swift in Sources */,
 				603065DE28AAAFDA0020DB3F /* ConvertController.swift in Sources */,
 				603065FA28AAC49C0020DB3F /* CodeResponse.swift in Sources */,
+				609BF99028ABA5DD0002C3C6 /* Dictionary+Utils.swift in Sources */,
 				609BF98628AAE4CD0002C3C6 /* UITextField+Utils.swift in Sources */,
 				603065E928AAB1A40020DB3F /* SummaryInteractor.swift in Sources */,
 				609BF98C28AB52990002C3C6 /* CacheItem.swift in Sources */,
