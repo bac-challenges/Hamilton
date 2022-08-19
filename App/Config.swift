@@ -26,7 +26,8 @@ struct Config {
     }
     // swiftlint:enable all
 
-    @BundleBacked<String>(key: "api-url")
+    static var urlKey = "api-url"
+    @BundleBacked<String>(key: urlKey)
     static var url
 
     @BundleBacked<String>(key: "api-key")
@@ -34,6 +35,9 @@ struct Config {
 
     @BundleBacked<String>(key: "api-refresh-interval")
     static var interval
+    static var timeInterval: TimeInterval {
+        return 3600 * (Double(interval ?? "") ?? 0.0)
+    }
 
     static var baseUrl: String {
         guard let url = url, let key = key else {
