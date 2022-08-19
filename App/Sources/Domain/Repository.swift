@@ -20,6 +20,10 @@ final class RemoteRepository: Repository {
     private var service: Service
     private var cache = [String: CacheItem]()
 
+    init() {
+        cache.load()
+    }
+
     func getCurrencyList() -> AnyPublisher<[Currency], Error> {
         return service.get(Config.EndPoint.code)
             .decode(type: CodeResponse.self, decoder: JSONDecoder())
@@ -28,12 +32,12 @@ final class RemoteRepository: Repository {
     }
 
     func getPair(base: String, target: String, amount: String) -> AnyPublisher<Pair, Error> {
-
         guard let cacheItem = cache["\(base)\(target)"], cacheItem.valid else {
             return service.get(Config.EndPoint.pair(base: base, target: target))
                 .decode(type: Pair.self, decoder: JSONDecoder())
-                .map { item in
-                    self.cache[item.name] = CacheItem(created: Date(), pair: item)
+                .map { [weak self] item in
+                    self?.cache[item.name] = CacheItem(created: Date(), pair: item)
+                    self?.cache.save()
                     return item
                 }
                 .eraseToAnyPublisher()
@@ -41,32 +45,6 @@ final class RemoteRepository: Repository {
 
         return Future<Pair, Error> { promise in
             promise(.success(cacheItem.pair))
-        }.eraseToAnyPublisher()
-    }
-}
-
-// MARK: -
-struct MockRepository: Repository {
-
-    private var items: [Currency] {
-        return [
-            Currency(code: "EUR", name: "Euro"),
-            Currency(code: "GBP", name: "Pound"),
-            Currency(code: "USD", name: "Dollar")
-        ]
-    }
-
-    private var pair = Pair(base: "USD", target: "GBP", rate: 1.2)
-
-    func getCurrencyList() -> AnyPublisher<[Currency], Error> {
-        return Future<[Currency], Error> { promise in
-            promise(.success(items))
-        }.eraseToAnyPublisher()
-    }
-
-    func getPair(base: String, target: String, amount: String) -> AnyPublisher<Pair, Error> {
-        return Future<Pair, Error> { promise in
-            promise(.success(pair))
         }.eraseToAnyPublisher()
     }
 }
