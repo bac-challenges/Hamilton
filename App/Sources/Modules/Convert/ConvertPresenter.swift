@@ -41,8 +41,8 @@ extension ConvertPresenter: ConvertPresenterViewInterface {
         timer?.invalidate()
     }
 
-    func next(pair: Pair) {
-        router.next(amount: pair.resultString,
+    func next(pair: Pair, amount: Double) {
+        router.next(amount: amount,
                     code: pair.target,
                     rate: pair.rateString)
     }

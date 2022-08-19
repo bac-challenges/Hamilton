@@ -19,10 +19,10 @@ final class CalculateInteractor: InteractorInterface {
 
 extension CalculateInteractor: CalculateInteractorPresenterInterface {
     func getCurrencyList() -> AnyPublisher<[Currency], Error> {
-        repository.getCurrencyList().eraseToAnyPublisher()
+        repository.getCurrencyList()
     }
 
     func getPair(base: String, target: String, amount: Double) -> AnyPublisher<Pair, Error> {
-        repository.getPair(base: base, target: target, amount: String(amount)).eraseToAnyPublisher()
+        repository.getPair(base: base, target: target, amount: String(amount))
     }
 }

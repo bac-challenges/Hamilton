@@ -7,25 +7,27 @@
 
 import Foundation
 
-struct Pair: Codable {
+struct Pair: Codable, Equatable {
 
     enum CodingKeys: String, CodingKey {
         case base = "base_code"
         case target = "target_code"
         case rate = "conversion_rate"
-        case result = "conversion_result"
     }
 
     let base: String
     let target: String
     let rate: Double
-    let result: Double
 
     var rateString: String {
         String(format: "%.2f", rate)
     }
 
-    var resultString: String {
-        String(format: "%.2f", result)
+    var name: String {
+        "\(base)\(target)"
+    }
+
+    static func == (lhs: Pair, rhs: Pair) -> Bool {
+        lhs.name == rhs.name
     }
 }
