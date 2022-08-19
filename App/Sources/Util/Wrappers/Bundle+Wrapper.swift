@@ -7,11 +7,9 @@
 
 import Foundation
 
-// swiftlint:disable all
 @propertyWrapper struct BundleBacked<Value> {
     let key: String
     var wrappedValue: Value? {
-        get { Bundle.main.object(forInfoDictionaryKey: key) as? Value }
+        Bundle.main.object(forInfoDictionaryKey: key) as? Value
     }
 }
-// swiftlint:enable all
