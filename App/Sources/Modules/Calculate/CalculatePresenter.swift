@@ -67,7 +67,7 @@ extension CalculatePresenter: CalculatePresenterViewInterface {
             .sink { error in
                 print(error)
             } receiveValue: { [weak self] pair in
-                self?.router.next(pair: pair, amount: 1)
+                self?.router.next(pair: pair, amount: self?.amount ?? 0)
             }
             .store(in: cancelBag)
     }

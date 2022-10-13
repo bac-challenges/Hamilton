@@ -52,7 +52,7 @@ private extension ConvertController {
         // Labels
         baseLabel.text = "\(amount) \(pair.base)"
         percedesLabel.text = ~"PRECEDES"
-        targetLabel.text = "\(pair.resultString) \(pair.target)"
+        targetLabel.text = "\(amount*pair.rate) \(pair.target)"
 
         presenter.runCountPublisher
             .receive(on: DispatchQueue.main)
@@ -64,7 +64,7 @@ private extension ConvertController {
 
         buttonNext.setTitle(~"CONVERT", for: .normal)
         buttonNext.addAction(UIAction(handler: { [weak self] _ in
-            self?.presenter.next(pair: pair)
+            self?.presenter.next(pair: pair, amount: amount)
         }), for: .touchUpInside)
     }
 }
