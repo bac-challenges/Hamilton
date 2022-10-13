@@ -5,8 +5,11 @@ Currency converter
 
 ## General
 - Swift version 5.6
-- iOS 15
-- Xcode 13
+- iOS 16
+- Xcode 14
 - UIKit
 - Combine
 - VIPER
+
+## Usage
+Run xcodegen
