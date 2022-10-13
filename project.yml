@@ -1,0 +1,109 @@
+name: Hamilton
+
+configs:
+    Debug:    debug
+    Release:  release
+    
+configFiles:
+    Debug: App/Resources/Config.xcconfig
+    Release: App/Resources/Config.xcconfig
+
+settings:
+    base:
+        PRODUCT_NAME: Hamilton
+        PRODUCT_BUNDLE_IDENTIFIER: com.blueantcorp
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+        ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME: AccentColor
+
+        SWIFT_VERSION: 5.7
+        TARGETED_DEVICE_FAMILY: 1
+
+        ENABLE_BITCODE: YES
+        
+        CURRENT_PROJECT_VERSION: 1
+        VERSIONING_SYSTEM: apple-generic
+
+        DEBUG_INFORMATION_FORMAT: dwarf-with-dsym
+
+options:
+    deploymentTarget:
+        iOS: 16.0
+    xcodeVersion: "14.0"
+    groupOrdering:
+        - order: [Sources, Resources]
+
+packages:
+    Lokalise:
+       url: https://github.com/lokalise/lokalise-ios-framework.git
+       from: 0.9.0
+
+targets:
+
+    # Hamilton
+    Hamilton:
+        platform: iOS
+        type: application
+        deploymentTarget: 16.0
+        
+        configFiles:
+            Debug: App/Resources/Config.xcconfig
+            Release: App/Resources/Config.xcconfig
+
+        info:
+            path: App/Resources/Hamilton-Info.plist
+
+            properties:
+                
+                # System
+                CFBundleShortVersionString: "1.0"
+                CFBundleVersion: "1"
+                UILaunchStoryboardName: "LaunchScreen.storyboard"
+                
+                # Orientations iPhone
+                UISupportedInterfaceOrientations:
+                    - UIInterfaceOrientationPortrait
+                
+                # Orientations iPad
+                UISupportedInterfaceOrientations~ipad:
+                    - UIInterfaceOrientationLandscapeLeft
+                    - UIInterfaceOrientationLandscapeRight
+                    - UIInterfaceOrientationPortrait
+                
+                # Custom
+                api-url: $(HAMILTON_API_URL)
+                api-key: $(HAMILTON_API_KEY)
+                api-refresh-interval: $(HAMILTON_REFRESH_INTERVAL)
+
+        settings:
+            configs:
+                Debug:
+                    PRODUCT_BUNDLE_IDENTIFIER: $(PRODUCT_BUNDLE_IDENTIFIER).debug.$(PRODUCT_NAME)
+                    ASSETCATALOG_COMPILER_APPICON_NAME: $(ASSETCATALOG_COMPILER_APPICON_NAME).debug
+                    ENABLE_BITCODE: NO
+
+                Release:
+                    PROVISIONING_PROFILE_SPECIFIER: $(PRODUCT_NAME)_Release
+                    PRODUCT_BUNDLE_IDENTIFIER: $(PRODUCT_BUNDLE_IDENTIFIER).$(PRODUCT_NAME)
+                    ASSETCATALOG_COMPILER_APPICON_NAME: $(ASSETCATALOG_COMPILER_APPICON_NAME)
+
+        preBuildScripts:
+
+            # SwiftLint
+            - script: |
+                        export PATH="$PATH:/opt/homebrew/bin"
+                        if which swiftlint > /dev/null; then
+                            swiftlint --fix --format
+                            swiftlint
+                        else
+                          echo "warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint"
+                        fi
+              basedOnDependencyAnalysis: false
+              name: 🔆 Swiftlint
+
+        sources:
+            - README.md
+            - App/Sources
+            - App/Resources
+
+        dependencies:
+            - package: Lokalise
