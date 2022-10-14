@@ -25,7 +25,7 @@ protocol SummaryInteractorPresenterInterface: InteractorPresenterInterface {}
 
 final class SummaryModule: ModuleInterface {
 
-    typealias View = SummaryController
+    typealias View = SummaryView
     typealias Presenter = SummaryPresenter
     typealias Router = SummaryRouter
     typealias Interactor = SummaryInteractor
@@ -37,11 +37,11 @@ final class SummaryModule: ModuleInterface {
 
         let interactor = Interactor()
         let presenter = Presenter()
-        let view = storyboard.instantiateViewController(ofType: View.self)
+        let view = View(presenter: presenter)
         let router = Router()
         router.navigationController = navigation
 
-        Self.assemble(view: view, presenter: presenter, router: router, interactor: interactor)
+        Self.assemble(presenter: presenter, router: router, interactor: interactor)
 
         return view
     }
