@@ -17,7 +17,8 @@ struct SummaryView: View, ViewInterface {
     var rate: String = ""
 
     private var successMessage: String {
-        ~"SUCCESS_MESSAGE"
+        let message = ~"SUCCESS_MESSAGE"
+        return message
             .replacingOccurrences(of: "AMOUNT", with: String(amount))
             .replacingOccurrences(of: "CODE", with: code)
             .replacingOccurrences(of: "RATE", with: rate)
@@ -25,11 +26,13 @@ struct SummaryView: View, ViewInterface {
 
     var body: some View {
         NavigationStack {
-            Text(successMessage).toolbar {
-                ToolbarItem(placement: .primaryAction) {
-                    Button(~"DONE", action: presenter.done)
+            Text(successMessage)
+                .multilineTextAlignment(.center)
+                .toolbar {
+                    ToolbarItem(placement: .primaryAction) {
+                        Button(~"DONE", action: presenter.done)
+                    }
                 }
-            }
         }
     }
 }
