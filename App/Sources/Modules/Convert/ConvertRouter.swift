@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftUI
 
 final class ConvertRouter: RouterInterface {
 
@@ -17,12 +18,12 @@ final class ConvertRouter: RouterInterface {
 
 extension ConvertRouter: ConvertRouterPresenterInterface {
     func next(amount: Double, code: String, rate: String) {
-        let view = SummaryModule.build()
+        var view = SummaryModule.build()
         view.amount = amount
         view.code = code
         view.rate = rate
 
-        navigationController?.present(UINavigationController(rootViewController: view), animated: true)
+        navigationController?.present(UIHostingController(rootView: view), animated: true)
     }
 
     func back() {

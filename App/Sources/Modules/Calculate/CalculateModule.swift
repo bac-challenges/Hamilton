@@ -52,10 +52,11 @@ final class CalculateModule: ModuleInterface {
         let interactor = Interactor()
         let presenter = Presenter()
         let view = storyboard.instantiateViewController(ofType: View.self)
+        view.presenter = presenter
         let router = Router()
         router.navigationController = navigation
 
-        Self.assemble(view: view, presenter: presenter, router: router, interactor: interactor)
+        Self.assemble(presenter: presenter, router: router, interactor: interactor)
 
         return view
     }

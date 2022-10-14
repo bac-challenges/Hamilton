@@ -40,7 +40,7 @@ public protocol InteractorPresenterInterface: AnyObject {}
 public protocol PresenterRouterInterface: AnyObject {}
 public protocol PresenterInteractorInterface: AnyObject {}
 public protocol PresenterViewInterface: AnyObject {}
-public protocol ViewPresenterInterface: AnyObject {}
+public protocol ViewPresenterInterface {}
 
 // MARK: - Module
 public protocol ModuleInterface {
@@ -50,16 +50,15 @@ public protocol ModuleInterface {
     associatedtype Router where Router: RouterInterface
     associatedtype Interactor where Interactor: InteractorInterface
 
-    static func assemble(view: View, presenter: Presenter, router: Router, interactor: Interactor)
+    static func assemble(presenter: Presenter, router: Router, interactor: Interactor)
 }
 
 // swiftlint:disable all
 public extension ModuleInterface {
-    static func assemble(view: View, presenter: Presenter, router: Router, interactor: Interactor) {
+    static func assemble(presenter: Presenter, router: Router, interactor: Interactor) {
         interactor.presenter = (presenter as! Self.Interactor.PresenterInteractor)
         presenter.interactor = (interactor as! Self.Presenter.InteractorPresenter)
         presenter.router = (router as! Self.Presenter.RouterPresenter)
         router.presenter = (presenter as! Self.Router.PresenterRouter)
-        view.presenter = (presenter as! Self.View.PresenterView)
     }
 }
